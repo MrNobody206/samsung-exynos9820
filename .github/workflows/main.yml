@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        model: [ "G973F" ]
+        model: [ "N975F" ]
 
     steps:
     - uses: actions/checkout@v1
@@ -27,17 +27,27 @@ jobs:
     - name: Kernel Configure
       run: |
         ./build config                   \
+                os_patch_level=2099-12  \
                 model=${{ matrix.model}} \
-                name="CRUEL-V3.4"        \
-                +magisk                  \
-                +nohardening             \
-                +ttl                     \
-                +wireguard               \
-                +cifs                    \
-                +sdfat                   \
-                +ntfs                    \
-                +morosound               \
-                +boeffla_wl_blocker      \
+                name=Cruel-v3.4.1-NobodyDEV    \
+                +magisk+canary      \
+                +ttl                \
+                +cifs               \
+                +sdfat              \
+                +ntfs               \
+                +tcp_cubic          \
+                +morosound          \
+                +boeffla_wl_blocker   \
+                +mass_storage       \
+                +wireguard          \
+                +io_maple           \
+                +io_fiops           \
+                +io_sio             \
+                +io_zen             \
+                +io_anxiety         \
+                +io_cfq             \
+                +sched_conservative \
+                +sched_ondemand
         2>&1 | tee config.info
     - name: Kernel Build
       run: ./build :build
