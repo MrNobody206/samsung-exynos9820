@@ -396,8 +396,8 @@ if __name__ == "__main__":
 
         make_config(configs)
 
-        if configs['kernel']['magisk']['enabled']:
-            update_magisk(configs['kernel']['magisk']['canary'])
+#        if configs['kernel']['magisk']['enabled']:
+#            update_magisk(configs['kernel']['magisk']['canary'])
 
         build()
     if 'mkimg' in stages:
