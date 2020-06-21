@@ -29,7 +29,7 @@ jobs:
         ./build config                   \
                 os_patch_level=2099-12  \
                 model=${{ matrix.model}} \
-                name=Cruel-v3.4.1-NobodyDEV    \
+                name=Cruel-v3.4.2-NobodyDEV    \
                 +magisk+canary      \
                 +ttl                \
                 +cifs               \
